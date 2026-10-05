@@ -1,0 +1,270 @@
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Elementos decorativos do fundo */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20px;
+      left: 37%;
+      width: 35px;
+      height: 65px;
+      border-right: 9px solid #55bdd3;
+      border-radius: 50%;
+      transform: rotate(5deg);
+      opacity: .9;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      right: 35px;
+      top: 230px;
+      width: 60px;
+      height: 130px;
+      background:
+        radial-gradient(circle, #67bed1 8px, transparent 9px);
+      background-size: 24px 24px;
+    }
+
+    .dashboard {
+      width: 1150px;
+      min-height: 818px;
+      background: #0d1323;
+      padding: 202px 132px;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .08);
+    }
+
+    .content {
+      width: 886px;
+      display: grid;
+      grid-template-columns: 205px 1fr;
+      gap: 23px;
+    }
+
+    /* Perfil */
+    .profile {
+      width: 205px;
+      background: #202653;
+      border-radius: 11px;
+      overflow: hidden;
+      color: white;
+    }
+
+    .profile-main {
+      height: 283px;
+      padding: 27px 25px;
+      background: #5745e8;
+    }
+
+    .avatar {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.9);
+      margin-bottom: 30px;
+    }
+
+    .profile-label {
+      font-size: 12px;
+      color: #c9c5ff;
+      margin-bottom: 4px;
+    }
+
+    .profile-name {
+      font-size: 29px;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+
+    .periods {
+      height: 130px;
+      padding: 20px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .period {
+      font-size: 14px;
+      color: #777eb0;
+    }
+
+    .period.active {
+      color: white;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .card {
+      height: 195px;
+      border-radius: 11px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      background: #202653;
+    }
+
+    .card-top {
+      height: 47px;
+      position: relative;
+    }
+
+    .card-body {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 158px;
+      background: #202653;
+      border-radius: 11px 11px 0 0;
+      padding: 25px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+
+    .hours {
+      font-size: 43px;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .last-week {
+      font-size: 12px;
+      color: #a7abd0;
+    }
+
+    .menu {
+      position: absolute;
+      right: 25px;
+      top: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #d8d9ed;
+    }
+
+    /* Cores */
+    .work .card-top {
+      background: #ff8965;
+    }
+
+    .play .card-top {
+      background: #55bddb;
+    }
+
+    .study .card-top {
+      background: #ff5b7d;
+    }
+
+    .exercise .card-top {
+      background: #4bce7e;
+    }
+
+    .social .card-top {
+      background: #7835d3;
+    }
+
+    .self-care .card-top {
+      background: #f6c955;
+    }
+
+    /* Ícones decorativos */
+    .card-top::after {
+      content: "";
+      position: absolute;
+      right: 17px;
+      top: 0;
+      width: 60px;
+      height: 45px;
+      opacity: .16;
+      border-radius: 50%;
+      background: rgba(0,0,0,.25);
+      transform: rotate(25deg);
+    }
+
+    /* Responsividade */
+    @media (max-width: 1100px) {
+      .dashboard {
+        width: 95%;
+        padding: 100px 50px;
+      }
+
+      .content {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 800px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      .dashboard {
+        width: 100%;
+        min-height: auto;
+        padding: 30px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        width: 100%;
+      }
+
+      .profile-main {
+        height: auto;
+      }
+
+      .periods {
+        height: 90px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .dashboard {
+        padding: 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        height: 180px;
+      }
+    }
+  
